@@ -213,7 +213,8 @@ func GetAllMastersAddr(sarr map[string]*ClusterNodeInfo) []string {
 	var masters []string
 	for a, arr := range sarr {
 		if arr.Role == "master" {
-			masters = append(masters, a)
+			// masters = append(masters, a)
+			masters = append(masters, strings.Split(a, "@")[0])
 		}
 	}
 
